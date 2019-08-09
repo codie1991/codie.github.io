@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 const HeaderStyles = styled.header`
   position: fixed;
+  left: 0;
   background: white;
   width: 100vw;
   z-index: 100;
@@ -13,12 +14,13 @@ const HeaderStyles = styled.header`
   a {
     cursor: pointer;
     transition: color 0.3s;
+    color: ${props => props.theme.lightGrey};
   }
 
   .inner {
     width: 100vw;
     max-width: 1000px;
-    padding: 2rem;
+    padding: 1rem 2rem;
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: auto auto auto;
@@ -31,8 +33,14 @@ const HeaderStyles = styled.header`
   }
 `
 
-const HeaderPadding = styled.div`
-  height: 100px;
+const HeaderContent = styled.div`
+  padding-top: 150px;
+  padding-bottom: 200px;
+  color: ${props => props.theme.lightGrey};
+
+  h1 {
+    color: ${props => props.theme.textColor};
+  }
 `
 
 const HeaderLink = ({ to, children }) => (
@@ -48,7 +56,7 @@ const HeaderLink = ({ to, children }) => (
   </Link>
 )
 
-const Header = () => (
+const Header = ({ children }) => (
   <>
     <HeaderStyles>
       <div className="inner">
@@ -63,7 +71,7 @@ const Header = () => (
         </div>
       </div>
     </HeaderStyles>
-    <HeaderPadding />
+    <HeaderContent>{children}</HeaderContent>
   </>
 )
 
