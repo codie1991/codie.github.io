@@ -78,7 +78,10 @@ const IndexPage = () => (
     </Element>
     <Element name="contact" className="section">
       <Box centered>
-        <h2>Let's Talk</h2>
+        <div style={{ maxWidth: 150, margin: "0 auto" }}>
+          <Image />
+        </div>
+        <h2 className="underlined">Let's Talk</h2>
         <p>
           Currently open for small contract work. Feel free to get in touch.
         </p>

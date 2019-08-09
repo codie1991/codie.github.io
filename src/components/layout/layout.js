@@ -29,6 +29,11 @@ const LayoutStyles = styled.div`
     margin-bottom: 3rem;
   }
 
+  .underlined {
+    display: block;
+    border-bottom: solid 4px red;
+  }
+
   .title {
     display: grid;
     grid-template-columns: auto auto;

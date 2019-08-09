@@ -14,6 +14,8 @@ const BoxStyles = styled.div`
   width: 95vw;
   max-width: 1000px;
   overflow: hidden;
+  display: grid;
+  justify-items: ${props => (props.centered ? "center" : "start")};
   text-align: ${props => (props.centered ? "center" : "left")};
 
   img {
