@@ -1,42 +1,70 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import { Link } from "react-scroll"
 import React from "react"
+import styled from "styled-components"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
+const HeaderStyles = styled.header`
+  position: fixed;
+  background: white;
+  width: 100vw;
+  z-index: 100;
+  display: grid;
+  justify-content: center;
+
+  a {
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .inner {
+    width: 100vw;
+    max-width: 1000px;
+    padding: 2rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: auto auto auto;
+    justify-content: start;
+  }
+
+  .link--active,
+  a:hover {
+    color: pink;
+  }
+`
+
+const HeaderPadding = styled.div`
+  height: 100px;
+`
+
+const HeaderLink = ({ to, children }) => (
+  <Link
+    activeClass="link--active"
+    className="link"
+    to={to}
+    offset={-200}
+    spy={true}
+    smooth={true}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+    {children}
+  </Link>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
+const Header = () => (
+  <>
+    <HeaderStyles>
+      <div className="inner">
+        <div className="cell">
+          <HeaderLink to="work">Work</HeaderLink>
+        </div>
+        <div className="cell">
+          <HeaderLink to="about">About</HeaderLink>
+        </div>
+        <div className="cell">
+          <HeaderLink to="contact">Contact</HeaderLink>
+        </div>
+      </div>
+    </HeaderStyles>
+    <HeaderPadding />
+  </>
+)
 
 export default Header
