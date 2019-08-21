@@ -9,12 +9,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
+import Helmet from "react-helmet"
 
 import theme from "./theme"
 import "./layout.css"
 
 const LayoutStyles = styled.div`
-  font-family: sans-serif;
+  font-family: ${props => props.theme.fontBody};
 
   h1,
   h2,
@@ -22,7 +23,12 @@ const LayoutStyles = styled.div`
   h4,
   h5,
   h6 {
-    font-family: georgia, serif;
+    font-family: ${props => props.theme.fontFancy};
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: ${props => props.theme.colorBrand} solid 4px;
   }
 
   .section {
@@ -31,7 +37,7 @@ const LayoutStyles = styled.div`
 
   .underlined {
     display: block;
-    border-bottom: solid 4px red;
+    border-bottom: solid 4px ${props => props.theme.colorBrand};
   }
 
   .title {
@@ -41,8 +47,8 @@ const LayoutStyles = styled.div`
     justify-content: start;
 
     .subtitle {
-      color: ${props => props.theme.lightGrey};
-      font-family: ${props => props.theme.fontSans};
+      color: ${props => props.theme.colorGreyLight};
+      font-family: ${props => props.theme.fontBody};
       font-weight: normal;
     }
   }
@@ -62,6 +68,9 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <LayoutStyles>
+        <Helmet>
+          <link rel="stylesheet" href="https://use.typekit.net/ftv1pwn.css" />
+        </Helmet>
         <div
           style={{
             margin: `0 auto`,
@@ -71,11 +80,6 @@ const Layout = ({ children }) => {
           }}
         >
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
         </div>
       </LayoutStyles>
     </ThemeProvider>

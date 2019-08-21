@@ -1,9 +1,9 @@
 import React from "react"
-import { Element } from "react-scroll"
+import { Element, Link } from "react-scroll"
 
 import Layout from "../components/layout/layout"
 import Header from "../components/layout/header"
-import Image from "../components/image"
+import Images from "../components/Images"
 import SEO from "../components/layout/seo"
 import Box from "../components/Box"
 
@@ -15,6 +15,14 @@ const IndexPage = () => (
         <h1>Codie Westphall</h1>
         <div>iOS &amp; Android engineer</div>
         <div>based in Auckland, NZ</div>
+
+        <div>Currently working at Timely.</div>
+        <div>
+          Open for contract work,{" "}
+          <Link to="contact" smooth="true" style={{ cursor: "pointer" }}>
+            get in touch.
+          </Link>
+        </div>
       </Header>
 
       <h2>Work</h2>
@@ -23,7 +31,7 @@ const IndexPage = () => (
           <h3>Timely</h3>
           <h3 className="subtitle">scheduling &amp; point of sale</h3>
         </div>
-        <p>
+        <div>
           <div>
             Running day spa's, hair salons, and beauty clinics all over the
             world.
@@ -32,7 +40,7 @@ const IndexPage = () => (
             Timely is a universal codebase leveraging the most of the iPad and
             iPhone.
           </div>
-        </p>
+        </div>
 
         <h4>Technologies</h4>
         <p>
@@ -49,7 +57,7 @@ const IndexPage = () => (
           <h3>PocketSmith</h3>
           <h3 className="subtitle">personal finance</h3>
         </div>
-        <p>
+        <div>
           <div>
             Running day spa's, hair salons, and beauty clinics all over the
             world.
@@ -58,7 +66,7 @@ const IndexPage = () => (
             Timely is a universal codebase leveraging the most of the iPad and
             iPhone.
           </div>
-        </p>
+        </div>
 
         <h4>Technologies</h4>
         <p>
@@ -78,8 +86,8 @@ const IndexPage = () => (
     </Element>
     <Element name="contact" className="section">
       <Box centered>
-        <div style={{ maxWidth: 150, margin: "0 auto" }}>
-          <Image />
+        <div style={{ width: 150, margin: "0 auto" }}>
+          <Images.Mail />
         </div>
         <h2 className="underlined">Let's Talk</h2>
         <p>

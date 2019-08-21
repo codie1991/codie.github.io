@@ -1,5 +1,8 @@
 export default {
   lightGrey: "grey",
-  textColor: "hsla(0,0%,0%,0.8)",
-  fontSans: "sans-serif",
+  colorGreyDark: "#333",
+  colorGreyLight: "#8e9297",
+  colorBrand: "#EA5252",
+  fontBody: "neue-haas-unica, sans-serif",
+  fontFancy: "p22-mackinac-pro,serif",
 }

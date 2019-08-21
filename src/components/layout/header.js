@@ -14,7 +14,8 @@ const HeaderStyles = styled.header`
   a {
     cursor: pointer;
     transition: color 0.3s;
-    color: ${props => props.theme.lightGrey};
+    color: ${props => props.theme.colorGreyLight};
+    border-bottom: none;
   }
 
   .inner {
@@ -29,17 +30,17 @@ const HeaderStyles = styled.header`
 
   .link--active,
   a:hover {
-    color: pink;
+    color: ${props => props.theme.colorBrand};
   }
 `
 
 const HeaderContent = styled.div`
   padding-top: 150px;
   padding-bottom: 200px;
-  color: ${props => props.theme.lightGrey};
+  color: ${props => props.theme.colorGreyLight};
 
   h1 {
-    color: ${props => props.theme.textColor};
+    color: ${props => props.theme.colorGreyDark};
   }
 `
 

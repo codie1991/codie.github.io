@@ -8,7 +8,7 @@ const BoxWrapper = styled.div`
 `
 
 const BoxStyles = styled.div`
-  border: 1px solid ${props => props.theme.lightGrey};
+  border: 1px solid ${props => props.theme.colorGreyLight};
   border-radius: 5px;
   padding: 1.5rem;
   width: 95vw;
