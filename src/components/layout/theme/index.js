@@ -5,4 +5,5 @@ export default {
   colorBrand: "#EA5252",
   fontBody: "neue-haas-unica, sans-serif",
   fontFancy: "p22-mackinac-pro,serif",
+  maxWidth: "960px",
 }

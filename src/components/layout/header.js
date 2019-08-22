@@ -11,7 +11,8 @@ const HeaderStyles = styled.header`
   display: grid;
   justify-content: center;
 
-  a {
+  a,
+  .link {
     cursor: pointer;
     transition: color 0.3s;
     color: ${props => props.theme.colorGreyLight};
@@ -20,12 +21,15 @@ const HeaderStyles = styled.header`
 
   .inner {
     width: 100vw;
-    max-width: 1000px;
-    padding: 1rem 2rem;
+    max-width: ${props => props.theme.maxWidth};
+    padding: 40px 40px;
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: auto auto auto;
     justify-content: start;
+    font-family: ${props => props.theme.fontFancy};
+    font-size: 24px;
+    font-weight: bold;
   }
 
   .link--active,
@@ -35,12 +39,22 @@ const HeaderStyles = styled.header`
 `
 
 const HeaderContent = styled.div`
-  padding-top: 150px;
-  padding-bottom: 200px;
-  color: ${props => props.theme.colorGreyLight};
+  padding-top: 200px;
+  padding-bottom: 130px;
 
-  h1 {
-    color: ${props => props.theme.colorGreyDark};
+  .header__grid {
+    display: grid;
+    grid-template-columns: auto 250px;
+    grid-gap: 100px 1rem;
+  }
+
+  .header__subtitle {
+    grid-column: 1 / span 2;
+  }
+
+  .header__image {
+    grid-column: 2;
+    grid-row: 1;
   }
 `
 

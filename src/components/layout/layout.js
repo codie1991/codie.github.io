@@ -16,6 +16,7 @@ import "./layout.css"
 
 const LayoutStyles = styled.div`
   font-family: ${props => props.theme.fontBody};
+  font-size: 16px;
 
   h1,
   h2,
@@ -23,7 +24,44 @@ const LayoutStyles = styled.div`
   h4,
   h5,
   h6 {
+    font-weight: bold;
     font-family: ${props => props.theme.fontFancy};
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+
+  h2.subtitle {
+    font-family: ${props => props.theme.fontBody};
+    font-weight: lighter;
+    font-size: 36px;
+    color: ${props => props.theme.colorGreyLight};
+  }
+
+  h3 {
+    font-weight: normal;
+    font-size: 36px;
+  }
+
+  h4 {
+    font-family: ${props => props.theme.fontBody};
+    font-weight: normal;
+    font-size: 21px;
+    color: ${props => props.theme.colorGreyLight};
+  }
+
+  h5 {
+    font-size: 21px;
+    color: ${props => props.theme.colorGreyLight};
+  }
+
+  .u-uppercase {
+    text-transform: uppercase;
   }
 
   a {
@@ -31,8 +69,20 @@ const LayoutStyles = styled.div`
     border-bottom: ${props => props.theme.colorBrand} solid 4px;
   }
 
+  a:visited {
+    color: unset;
+  }
+
+  p {
+    max-width: 720px;
+  }
+
   .section {
-    margin-bottom: 3rem;
+    margin-bottom: 80px;
+  }
+
+  .section--last {
+    margin-bottom: 30vh;
   }
 
   .underlined {

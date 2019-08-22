@@ -12,25 +12,49 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Element name="work" className="section">
       <Header>
-        <h1>Codie Westphall</h1>
-        <div>iOS &amp; Android engineer</div>
-        <div>based in Auckland, NZ</div>
-
-        <div>Currently working at Timely.</div>
-        <div>
-          Open for contract work,{" "}
-          <Link to="contact" smooth="true" style={{ cursor: "pointer" }}>
-            get in touch.
-          </Link>
+        <div className="header__grid">
+          <div className="header__title">
+            <h1>Codie Westphall</h1>
+            <h2 className="subtitle">iOS &amp; Android engineer</h2>
+            <h2 className="subtitle">based in Auckland, NZ</h2>
+          </div>
+          <div className="header__subtitle">
+            <h3>
+              Currently working at{" "}
+              <a
+                href="https://www.gettimely.com/"
+                target="_blank"
+                rel="nofollower noopener"
+              >
+                Timely
+              </a>
+              .
+            </h3>
+            <h3>
+              Open for contract work,{" "}
+              <Link to="contact" smooth="true" style={{ cursor: "pointer" }}>
+                get in touch.
+              </Link>
+            </h3>
+          </div>
+          <div className="header__image">
+            <Images.Avatar />
+          </div>
         </div>
       </Header>
 
       <h2>Work</h2>
       <Box margin>
-        <div className="title">
-          <h3>Timely</h3>
-          <h3 className="subtitle">scheduling &amp; point of sale</h3>
-        </div>
+        <h3>
+          <a
+            href="https://www.gettimely.com/"
+            target="_blank"
+            rel="nofollower noopener"
+          >
+            Timely
+          </a>
+        </h3>
+        <h4 className="u-uppercase">scheduling &amp; point of sale</h4>
         <div>
           <div>
             Running day spa's, hair salons, and beauty clinics all over the
@@ -42,7 +66,7 @@ const IndexPage = () => (
           </div>
         </div>
 
-        <h4>Technologies</h4>
+        <h4 className="u-uppercase">Technologies</h4>
         <p>
           Swift, Codable, Custom networking, Customer UI, Bluetooth
           connectivity, Hardware support
@@ -81,18 +105,31 @@ const IndexPage = () => (
     </Element>
     <Element name="about" className="section">
       <h2>About</h2>
-      <p>Block one</p>
-      <p>Block two!</p>
+      <p>
+        Hello, I'm Codie. I've been a mobile developer for the past 5 years,
+        tackling native iOS and Android projects over the startup scene in New
+        Zealand.
+      </p>
+      <p>
+        When I'm not found playing with cool tech at work, you'll probably find
+        me enjoying the beautiful country I live in or with a delicious beverage
+        in my hand. Coffee (flat white), beer (hazy IPA), or a gin &amp; tonic.
+      </p>
+      <p>
+        My hobbies are all over the show, but photography is one of my loves and
+        passion. It mixes well with hiking and travelling too! I also love a
+        good film, or tv show that gets me thinking.
+      </p>
     </Element>
-    <Element name="contact" className="section">
+    <Element name="contact" className="section section--last">
       <Box centered>
         <div style={{ width: 150, margin: "0 auto" }}>
           <Images.Mail />
         </div>
         <h2 className="underlined">Let's Talk</h2>
-        <p>
+        <h4>
           Currently open for small contract work. Feel free to get in touch.
-        </p>
+        </h4>
       </Box>
     </Element>
   </Layout>

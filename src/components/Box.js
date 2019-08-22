@@ -4,13 +4,13 @@ import styled from "styled-components"
 const BoxWrapper = styled.div`
   display: grid;
   justify-content: center;
-  margin-bottom: ${props => (props.margin ? "2rem" : "0")};
+  margin-bottom: ${props => (props.margin ? "80px" : "0")};
 `
 
 const BoxStyles = styled.div`
   border: 1px solid ${props => props.theme.colorGreyLight};
-  border-radius: 5px;
-  padding: 1.5rem;
+  border-radius: 20px;
+  padding: 40px;
   width: 95vw;
   max-width: 1000px;
   overflow: hidden;
@@ -24,9 +24,9 @@ const BoxStyles = styled.div`
   }
 
   .full-width {
-    margin: 0 -1.5rem -1.5rem;
+    margin: 0 -40px -40px;
     max-width: none;
-    width: calc(100% + 3rem);
+    width: calc(100% + 80px);
   }
 `
 
