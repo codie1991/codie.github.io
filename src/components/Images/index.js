@@ -3,6 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import Mail from "./Mail"
+import Timely from "./Timely"
+import Consult from "./Consult"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -34,4 +36,6 @@ const Avatar = () => {
 export default {
   Avatar,
   Mail,
+  Timely,
+  Consult,
 }

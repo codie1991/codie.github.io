@@ -5,7 +5,7 @@ import Layout from "../components/layout/layout"
 import Header from "../components/layout/header"
 import Images from "../components/Images"
 import SEO from "../components/layout/seo"
-import Box from "../components/Box"
+import Box, { SideBySide } from "../components/Box"
 
 const IndexPage = () => (
   <Layout>
@@ -44,7 +44,7 @@ const IndexPage = () => (
       </Header>
 
       <h2>Work</h2>
-      <Box margin>
+      <Box>
         <h3>
           <a
             href="https://www.gettimely.com/"
@@ -71,16 +71,13 @@ const IndexPage = () => (
           Swift, Codable, Custom networking, Customer UI, Bluetooth
           connectivity, Hardware support
         </p>
-        <img
-          className="full-width"
-          src="https://images.unsplash.com/photo-1556909172-8c2f041fca1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
-        />
+        <div className="full-width">
+          <Images.Timely />
+        </div>
       </Box>
       <Box>
-        <div className="title">
-          <h3>PocketSmith</h3>
-          <h3 className="subtitle">personal finance</h3>
-        </div>
+        <h3>Consult by Timely</h3>
+        <h4 className="u-uppercase">Customisable forms</h4>
         <div>
           <div>
             Running day spa's, hair salons, and beauty clinics all over the
@@ -97,11 +94,18 @@ const IndexPage = () => (
           Swift, Codable, Custom networking, Customer UI, Bluetooth
           connectivity, Hardware support
         </p>
-        <img
-          className="full-width"
-          src="https://images.unsplash.com/photo-1556909172-8c2f041fca1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80"
-        />
+        <div className="full-width">
+          <Images.Consult />
+        </div>
       </Box>
+      {/* <SideBySide>
+        <Box>
+          <h3>Floorsense</h3>
+        </Box>
+        <Box>
+          <h3>PocketSmith</h3>
+        </Box>
+      </SideBySide> */}
     </Element>
     <Element name="about" className="section">
       <h2>About</h2>

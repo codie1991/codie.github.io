@@ -4,7 +4,7 @@ import styled from "styled-components"
 const BoxWrapper = styled.div`
   display: grid;
   justify-content: center;
-  margin-bottom: ${props => (props.margin ? "80px" : "0")};
+  margin-bottom: 80px;
 `
 
 const BoxStyles = styled.div`
@@ -35,5 +35,12 @@ const Box = ({ children, margin, centered }) => (
     <BoxStyles centered={centered}>{children}</BoxStyles>
   </BoxWrapper>
 )
+
+export const SideBySide = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 80px;
+  max-width: 95vw;
+`
 
 export default Box
