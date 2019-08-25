@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import Mail from "./Mail"
 import Timely from "./Timely"
 import Consult from "./Consult"
+import FloorSense from "./FloorSense"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -38,4 +39,5 @@ export default {
   Mail,
   Timely,
   Consult,
+  FloorSense,
 }

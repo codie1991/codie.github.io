@@ -77,8 +77,14 @@ const LayoutStyles = styled.div`
     max-width: 720px;
   }
 
+  .container {
+    max-width: ${props => props.theme.maxWidth};
+    padding: 0 ${props => props.theme.padding};
+    margin: 0 auto;
+  }
+
   .section {
-    margin-bottom: 80px;
+    margin-bottom: 130px;
   }
 
   .section--last {
@@ -121,14 +127,7 @@ const Layout = ({ children }) => {
         <Helmet>
           <link rel="stylesheet" href="https://use.typekit.net/ftv1pwn.css" />
         </Helmet>
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 2rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
+        <div>
           <main>{children}</main>
         </div>
       </LayoutStyles>

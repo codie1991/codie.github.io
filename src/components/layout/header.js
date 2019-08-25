@@ -39,8 +39,9 @@ const HeaderStyles = styled.header`
 `
 
 const HeaderContent = styled.div`
-  padding-top: 200px;
-  padding-bottom: 130px;
+  padding: 200px ${props => props.theme.padding} 130px;
+  max-width: ${props => props.theme.maxWidth};
+  margin: 0 auto;
 
   .header__grid {
     display: grid;

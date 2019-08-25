@@ -6,4 +6,5 @@ export default {
   fontBody: "neue-haas-unica, sans-serif",
   fontFancy: "p22-mackinac-pro,serif",
   maxWidth: "960px",
+  padding: "40px",
 }

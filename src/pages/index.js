@@ -43,7 +43,7 @@ const IndexPage = () => (
         </div>
       </Header>
 
-      <h2>Work</h2>
+      <h2 className="container">Work</h2>
       <Box>
         <h3>
           <a
@@ -98,16 +98,19 @@ const IndexPage = () => (
           <Images.Consult />
         </div>
       </Box>
-      {/* <SideBySide>
-        <Box>
+      <SideBySide>
+        <Box sideBySide>
           <h3>Floorsense</h3>
+          <div className="full-width">
+            <Images.FloorSense />
+          </div>
         </Box>
-        <Box>
+        <Box sideBySide>
           <h3>PocketSmith</h3>
         </Box>
-      </SideBySide> */}
+      </SideBySide>
     </Element>
-    <Element name="about" className="section">
+    <Element name="about" className="section container">
       <h2>About</h2>
       <p>
         Hello, I'm Codie. I've been a mobile developer for the past 5 years,
