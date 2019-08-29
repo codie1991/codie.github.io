@@ -103,6 +103,11 @@ const LayoutStyles = styled.div`
     border-bottom: solid 4px ${props => props.theme.colorBrand};
   }
 
+  .content {
+    width: 100%;
+    max-width: 600px;
+  }
+
   .title {
     display: grid;
     grid-template-columns: auto auto;

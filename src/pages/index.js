@@ -24,7 +24,7 @@ const IndexPage = () => (
               <a
                 href="https://www.gettimely.com/"
                 target="_blank"
-                rel="nofollower noopener"
+                rel="nofollower noopener noreferrer"
               >
                 Timely
               </a>
@@ -49,25 +49,27 @@ const IndexPage = () => (
           <a
             href="https://www.gettimely.com/"
             target="_blank"
-            rel="nofollower noopener"
+            rel="nofollower noopener noreferrer"
           >
             Timely
           </a>
         </h3>
         <h4 className="u-uppercase">scheduling &amp; point of sale</h4>
-        <div>
+        <div className="content">
           <div>
             Running day spa's, hair salons, and beauty clinics all over the
             world.
           </div>
           <div>
-            Timely is a universal codebase leveraging the most of the iPad and
-            iPhone.
+            My role is to lead the development of further features and decisions
+            for mobile clients at Timely. Working with 3rd party payment
+            providers, printer connectivity and a variety of hardware is all
+            part of the job.
           </div>
         </div>
 
         <h4 className="u-uppercase">Technologies</h4>
-        <p>
+        <p className="content">
           Swift, Codable, Custom networking, Customer UI, Bluetooth
           connectivity, Hardware support
         </p>
@@ -76,29 +78,38 @@ const IndexPage = () => (
         </div>
       </Box>
       <Box>
-        <h3>Consult by Timely</h3>
+        <h3>
+          <a
+            href="https://www.gettimely.com/consultation-app/"
+            target="_blank"
+            rel="nofollower noopener noreferrer"
+          >
+            Consult by Timely
+          </a>
+        </h3>
         <h4 className="u-uppercase">Customisable forms</h4>
-        <div>
+        <div className="content">
           <div>
-            Running day spa's, hair salons, and beauty clinics all over the
-            world.
+            Enhancing integrations to Timely as well as providing the industry
+            with an innovative app.
           </div>
           <div>
-            Timely is a universal codebase leveraging the most of the iPad and
-            iPhone.
+            My role was to build an easy to use form builder that provided
+            flexibility for future upgrades. On top of this we wanted to offer
+            enhancements to existing Timely customers while still having a full
+            solution for those who were not Timely customers.
           </div>
         </div>
 
         <h4>Technologies</h4>
-        <p>
-          Swift, Codable, Custom networking, Customer UI, Bluetooth
-          connectivity, Hardware support
+        <p class="content">
+          Swift, Codable, Drag and drop, Drawing, Customer UI
         </p>
         <div className="full-width">
           <Images.Consult />
         </div>
       </Box>
-      <SideBySide>
+      {/* <SideBySide>
         <Box sideBySide>
           <h3>Floorsense</h3>
           <div className="full-width">
@@ -108,7 +119,7 @@ const IndexPage = () => (
         <Box sideBySide>
           <h3>PocketSmith</h3>
         </Box>
-      </SideBySide>
+      </SideBySide> */}
     </Element>
     <Element name="about" className="section container">
       <h2>About</h2>
