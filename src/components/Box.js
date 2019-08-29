@@ -28,6 +28,20 @@ const BoxWrapper = styled.div`
     max-width: none;
     width: calc(100% + 80px);
   }
+
+  @media screen and (max-width: ${props =>
+      props.theme.breakpointMedium}) and (min-width: ${props =>
+      props.theme.breakpointSmallMin}) {
+    padding-left: ${props => props.theme.padding};
+    padding-right: ${props => props.theme.padding};
+  }
+
+  @media screen and (max-width: ${props => props.theme.breakpointSmall}) {
+    .box {
+      border: none;
+      border-radius: 0;
+    }
+  }
 `
 
 const Box = ({ children, ...props }) => (
@@ -44,6 +58,11 @@ export const SideBySide = styled.div`
   grid-gap: 80px;
   max-width: 1040px;
   margin: 0 auto;
+
+  @media screen and (max-width: ${props => props.theme.breakpointMedium}) {
+    grid-template-columns: 1fr;
+    max-width: ${props => props.theme.maxWidth};
+  }
 `
 
 export default Box

@@ -45,17 +45,25 @@ const HeaderContent = styled.div`
 
   .header__grid {
     display: grid;
-    grid-template-columns: auto 250px;
-    grid-gap: 100px 1rem;
   }
-
-  .header__subtitle {
-    grid-column: 1 / span 2;
-  }
-
   .header__image {
-    grid-column: 2;
     grid-row: 1;
+  }
+
+  @media screen and (min-width: ${props => props.theme.breakpointSmallMin}) {
+    .header__grid {
+      grid-template-columns: auto 250px;
+      grid-gap: 100px 1rem;
+    }
+
+    .header__subtitle {
+      grid-column: 1 / span 2;
+    }
+
+    .header__image {
+      grid-column: 2;
+      grid-row: 1;
+    }
   }
 `
 

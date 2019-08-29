@@ -67,10 +67,11 @@ const LayoutStyles = styled.div`
   a {
     text-decoration: none;
     border-bottom: ${props => props.theme.colorBrand} solid 4px;
+    color: ${props => props.theme.colorGreyDark};
   }
 
   a:visited {
-    color: unset;
+    color: ${props => props.theme.colorGreyDark};
   }
 
   p {
@@ -81,6 +82,12 @@ const LayoutStyles = styled.div`
     max-width: ${props => props.theme.maxWidth};
     padding: 0 ${props => props.theme.padding};
     margin: 0 auto;
+
+    @media screen and (max-width: ${props =>
+        props.theme.breakpointMedium}) and (min-width: ${props =>
+        props.theme.breakpointSmallMin}) {
+      padding: 0 calc(2 * ${props => props.theme.padding});
+    }
   }
 
   .section {
