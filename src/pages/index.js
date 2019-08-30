@@ -9,7 +9,7 @@ import Box, { SideBySide } from "../components/Box"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Codie Westphall" />
     <Element name="work" className="section">
       <Header>
         <div className="header__grid">
