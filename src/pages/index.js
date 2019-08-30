@@ -38,7 +38,7 @@ const IndexPage = () => (
             </h3>
           </div>
           <div className="header__image">
-            <Images.Avatar />
+            <Images.Avatar maxWidth={300} />
           </div>
         </div>
       </Header>
@@ -102,7 +102,7 @@ const IndexPage = () => (
         </div>
 
         <h4>Technologies</h4>
-        <p class="content">
+        <p className="content">
           Swift, Codable, Drag and drop, Drawing, Customer UI
         </p>
         <div className="full-width">

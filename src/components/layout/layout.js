@@ -34,6 +34,7 @@ const LayoutStyles = styled.div`
 
   h2 {
     font-size: 48px;
+    margin-bottom: 40px;
   }
 
   h2.subtitle {
@@ -123,15 +124,15 @@ const LayoutStyles = styled.div`
 `
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
 
   return (
     <ThemeProvider theme={theme}>

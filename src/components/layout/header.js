@@ -36,10 +36,20 @@ const HeaderStyles = styled.header`
   a:hover {
     color: ${props => props.theme.colorBrand};
   }
+
+  @media screen and (max-width: ${props => props.theme.breakpointSmall}) {
+    bottom: 0;
+
+    .inner {
+      padding: 20px;
+      justify-content: center;
+      font-size: 20px;
+    }
+  }
 `
 
 const HeaderContent = styled.div`
-  padding: 200px ${props => props.theme.padding} 130px;
+  padding: 100px ${props => props.theme.padding} 130px;
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
 
@@ -51,6 +61,8 @@ const HeaderContent = styled.div`
   }
 
   @media screen and (min-width: ${props => props.theme.breakpointSmallMin}) {
+    padding-top: 200px;
+
     .header__grid {
       grid-template-columns: auto 250px;
       grid-gap: 100px 1rem;

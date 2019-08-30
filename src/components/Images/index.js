@@ -18,7 +18,7 @@ import FloorSense from "./FloorSense"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Avatar = () => {
+const Avatar = ({ maxWidth }) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "asset_avatar.png" }) {
@@ -31,7 +31,12 @@ const Avatar = () => {
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <Img
+      fluid={data.placeholderImage.childImageSharp.fluid}
+      style={{ maxWidth }}
+    />
+  )
 }
 
 export default {
