@@ -35,6 +35,7 @@ const LayoutStyles = styled.div`
   h2 {
     font-size: 48px;
     margin-bottom: 40px;
+    line-height: 2.5rem;
   }
 
   h2.subtitle {
@@ -54,6 +55,7 @@ const LayoutStyles = styled.div`
     font-weight: normal;
     font-size: 21px;
     color: ${props => props.theme.colorGreyLight};
+    margin-bottom: 5px;
   }
 
   h5 {
@@ -81,7 +83,7 @@ const LayoutStyles = styled.div`
 
   .container {
     max-width: ${props => props.theme.maxWidth};
-    padding: 0 ${props => props.theme.padding};
+    padding:  0 ${props => props.theme.padding} ${props => props.theme.padding};
     margin: 0 auto;
 
     @media screen and (max-width: ${props =>
@@ -107,6 +109,7 @@ const LayoutStyles = styled.div`
   .content {
     width: 100%;
     max-width: 600px;
+    margin-bottom: 20px;
   }
 
   .title {

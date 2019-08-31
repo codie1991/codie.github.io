@@ -15,8 +15,7 @@ const IndexPage = () => (
         <div className="header__grid">
           <div className="header__title">
             <h1>Codie Westphall</h1>
-            <h2 className="subtitle">iOS &amp; Android engineer</h2>
-            <h2 className="subtitle">based in Auckland, NZ</h2>
+            <h2 className="subtitle">iOS &amp; Android engineer<br/>based in Auckland, NZ</h2>
           </div>
           <div className="header__subtitle">
             <h3>
@@ -141,10 +140,18 @@ const IndexPage = () => (
     </Element>
     <Element name="contact" className="section section--last">
       <Box centered>
-        <div style={{ width: 150, margin: "0 auto" }}>
+        <div style={{ width: 150, margin: "20px auto" }}>
           <Images.Mail />
         </div>
-        <h2 className="underlined">Let's Talk</h2>
+        <h2>
+          <a
+              href="mailto:codiewestphall@gmail.com"
+              target="_blank"
+              rel="nofollower noopener noreferrer"
+            >
+              Let's Talk
+          </a>
+        </h2>
         <h4>
           Currently open for small contract work. Feel free to get in touch.
         </h4>
