@@ -11,36 +11,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Codie Westphall" />
     <Element name="work" className="section">
-      <Header>
-        <div className="header__grid">
-          <div className="header__title">
-            <h1>Codie Westphall</h1>
-            <h2 className="subtitle">iOS &amp; Android engineer<br/>based in Auckland, NZ</h2>
-          </div>
-          <div className="header__subtitle">
-            <h3>
-              Currently working at{" "}
-              <a
-                href="https://www.gettimely.com/"
-                target="_blank"
-                rel="nofollower noopener noreferrer"
-              >
-                Timely
-              </a>
-              .
-            </h3>
-            <h3>
-              Open for contract work,{" "}
-              <Link to="contact" smooth="true" style={{ cursor: "pointer" }}>
-                get in touch.
-              </Link>
-            </h3>
-          </div>
-          <div className="header__image">
-            <Images.Avatar maxWidth={300} />
-          </div>
-        </div>
-      </Header>
+      <Header></Header>
 
       <h2 className="container">Work</h2>
       <Box>
@@ -145,11 +116,11 @@ const IndexPage = () => (
         </div>
         <h2>
           <a
-              href="mailto:codiewestphall@gmail.com"
-              target="_blank"
-              rel="nofollower noopener noreferrer"
-            >
-              Let's Talk
+            href="mailto:codiewestphall@gmail.com"
+            target="_blank"
+            rel="nofollower noopener noreferrer"
+          >
+            Let's Talk
           </a>
         </h2>
         <h4>

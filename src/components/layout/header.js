@@ -2,6 +2,8 @@ import { Link } from "react-scroll"
 import React from "react"
 import styled from "styled-components"
 
+import Images from "../Images"
+
 const HeaderStyles = styled.header`
   position: fixed;
   left: 0;
@@ -25,16 +27,27 @@ const HeaderStyles = styled.header`
     padding: 40px 40px;
     display: grid;
     grid-gap: 2rem;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto 50px;
     justify-content: start;
     font-family: ${props => props.theme.fontFancy};
     font-size: 24px;
     font-weight: bold;
+    position: relative;
   }
 
   .link--active,
   a:hover {
     color: ${props => props.theme.colorBrand};
+  }
+
+  .header__image {
+    height: 100%;
+    justify-self: end;
+    width: 80px;
+    position: absolute;
+    display: grid;
+    align-items: center;
+    right: 40px;
   }
 
   @media screen and (max-width: ${props => props.theme.breakpointSmall}) {
@@ -92,23 +105,61 @@ const HeaderLink = ({ to, children }) => (
   </Link>
 )
 
-const Header = ({ children }) => (
-  <>
-    <HeaderStyles>
-      <div className="inner">
-        <div className="cell">
-          <HeaderLink to="work">Work</HeaderLink>
+const Header = ({ children }) => {
+  return (
+    <>
+      <HeaderStyles>
+        <div className="inner">
+          <div className="cell">
+            <HeaderLink to="work">Work</HeaderLink>
+          </div>
+          <div className="cell">
+            <HeaderLink to="about">About</HeaderLink>
+          </div>
+          <div className="cell">
+            <HeaderLink to="contact">Contact</HeaderLink>
+          </div>
+          <div className="header__image">
+            <Images.Avatar maxWidth={80} />
+          </div>
         </div>
-        <div className="cell">
-          <HeaderLink to="about">About</HeaderLink>
+      </HeaderStyles>
+      <HeaderContent>
+        <div className="header__grid">
+          <div className="header__title">
+            <h1>Codie Westphall</h1>
+            <h2 className="subtitle">
+              iOS &amp; Android engineer
+              <br />
+              based in Auckland, NZ
+            </h2>
+          </div>
+          <div className="header__subtitle">
+            <h3>
+              Currently working at{" "}
+              <a
+                href="https://www.gettimely.com/"
+                target="_blank"
+                rel="nofollower noopener noreferrer"
+              >
+                Timely
+              </a>
+              .
+            </h3>
+            <h3>
+              Open for contract work,{" "}
+              <Link to="contact" smooth="true" style={{ cursor: "pointer" }}>
+                get in touch.
+              </Link>
+            </h3>
+          </div>
+          <div className="header__image">
+            <Images.Avatar maxWidth={300} />
+          </div>
         </div>
-        <div className="cell">
-          <HeaderLink to="contact">Contact</HeaderLink>
-        </div>
-      </div>
-    </HeaderStyles>
-    <HeaderContent>{children}</HeaderContent>
-  </>
-)
+      </HeaderContent>
+    </>
+  )
+}
 
 export default Header

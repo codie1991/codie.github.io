@@ -1,5 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 const BoxWrapper = styled.div`
   display: grid;
@@ -44,11 +46,33 @@ const BoxWrapper = styled.div`
   }
 `
 
-const Box = ({ children, ...props }) => (
-  <BoxWrapper {...props}>
-    <div className="box">{children}</div>
-  </BoxWrapper>
-)
+const variants = {
+  offScreen: {
+    y: 200,
+    transition: 0.5,
+  },
+  onScreen: {
+    y: 0,
+    transition: 0.5,
+  },
+}
+
+const Box = ({ children, ...props }) => {
+  const [ref, inView] = useInView({
+    fireOnce: true,
+    threshold: 0.05,
+  })
+  return (
+    <BoxWrapper {...props} ref={ref}>
+      <motion.div
+        variants={variants}
+        animate={inView ? "onScreen" : "offScreen"}
+      >
+        <div className="box">{children}</div>
+      </motion.div>
+    </BoxWrapper>
+  )
+}
 
 // TODO: stack for single col!
 // TODO: figure out how to keep image down the bottom
