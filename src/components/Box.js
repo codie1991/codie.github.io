@@ -59,7 +59,7 @@ const variants = {
 
 const Box = ({ children, ...props }) => {
   const [ref, inView] = useInView({
-    fireOnce: true,
+    triggerOnce: true,
     threshold: 0.05,
   })
   return (
