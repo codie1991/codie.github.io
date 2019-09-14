@@ -48,19 +48,19 @@ const BoxWrapper = styled.div`
 
 const variants = {
   offScreen: {
-    y: 200,
-    transition: 0.5,
+    y: 300,
+    transition: { duration: 0.5 },
   },
   onScreen: {
     y: 0,
-    transition: 0.5,
+    transition: { duration: 0.5 },
   },
 }
 
 const Box = ({ children, ...props }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.05,
+    threshold: 0.1,
   })
   return (
     <BoxWrapper {...props} ref={ref}>

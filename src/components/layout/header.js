@@ -1,7 +1,9 @@
 import { Link } from "react-scroll"
 import React from "react"
 import styled from "styled-components"
+import { motion } from "framer-motion"
 
+import { useMagicSizes, useMagicSizesSetup } from "../../hooks/useMagicSizes"
 import Images from "../Images"
 
 const HeaderStyles = styled.header`
@@ -23,16 +25,17 @@ const HeaderStyles = styled.header`
 
   .inner {
     width: 100vw;
+    height: 105px;
+    padding: 0 40px;
     max-width: ${props => props.theme.maxWidth};
-    padding: 40px 40px;
     display: grid;
     grid-gap: 2rem;
-    grid-template-columns: auto auto auto 50px;
+    grid-template-columns: auto auto auto 1fr;
     justify-content: start;
     font-family: ${props => props.theme.fontFancy};
     font-size: 24px;
     font-weight: bold;
-    position: relative;
+    align-items: center;
   }
 
   .link--active,
@@ -44,7 +47,6 @@ const HeaderStyles = styled.header`
     height: 100%;
     justify-self: end;
     width: 80px;
-    position: absolute;
     display: grid;
     align-items: center;
     right: 40px;
@@ -57,6 +59,11 @@ const HeaderStyles = styled.header`
       padding: 20px;
       justify-content: center;
       font-size: 20px;
+      grid-template-columns: auto auto auto;
+    }
+
+    .header__image {
+      display: none;
     }
   }
 `
@@ -71,6 +78,10 @@ const HeaderContent = styled.div`
   }
   .header__image {
     grid-row: 1;
+  }
+
+  .header__image--mobile {
+    display: block;
   }
 
   @media screen and (min-width: ${props => props.theme.breakpointSmallMin}) {
@@ -89,8 +100,32 @@ const HeaderContent = styled.div`
       grid-column: 2;
       grid-row: 1;
     }
+
+    .header__image--mobile {
+      display: none;
+    }
   }
 `
+const Child = styled(motion.div)`
+  position: absolute;
+  z-index: 10;
+`
+
+const Avatar = ({ dimensions }) => {
+  const { width, height, top, left } = useMagicSizes({
+    dimensions,
+    distance: 250,
+  })
+  return (
+    <Child
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      style={{ width, height, top, left }}
+    >
+      <Images.Avatar maxWidth={300} />
+    </Child>
+  )
+}
 
 const HeaderLink = ({ to, children }) => (
   <Link
@@ -106,9 +141,11 @@ const HeaderLink = ({ to, children }) => (
 )
 
 const Header = ({ children }) => {
+  const { outerRef, startRef, endRef, dimensions } = useMagicSizesSetup()
+
   return (
     <>
-      <HeaderStyles>
+      <HeaderStyles ref={outerRef}>
         <div className="inner">
           <div className="cell">
             <HeaderLink to="work">Work</HeaderLink>
@@ -119,8 +156,12 @@ const Header = ({ children }) => {
           <div className="cell">
             <HeaderLink to="contact">Contact</HeaderLink>
           </div>
-          <div className="header__image">
-            <Images.Avatar maxWidth={80} />
+          <div
+            className="header__image"
+            ref={endRef}
+            style={{ width: 80, height: 80 }}
+          >
+            {dimensions && <Avatar dimensions={dimensions} />}
           </div>
         </div>
       </HeaderStyles>
@@ -153,8 +194,10 @@ const Header = ({ children }) => {
               </Link>
             </h3>
           </div>
-          <div className="header__image">
-            <Images.Avatar maxWidth={300} />
+          <div className="header__image" ref={startRef}>
+            <div className="header__image--mobile">
+              <Images.Avatar maxWidth={300} />
+            </div>
           </div>
         </div>
       </HeaderContent>
