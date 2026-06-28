@@ -1,0 +1,76 @@
+{
+  "main": [
+    {
+      "company": "LHV Bank UK",
+      "companyUrl": "https://www.lhv.co.uk",
+      "dates": "October 2025 – Present",
+      "role": "Engineering Manager, Retail Banking · London",
+      "body": [
+        "LHV Bank UK is a fast-growing digital bank building retail and business banking products for the UK market. I lead engineering for the Retail Banking division: 18 engineers across cross-functional squads spanning native mobile, backend engineering, and software engineering in test.",
+        "The role sits at the intersection of people leadership, technical strategy, and organisational scale. I work closely with Lead and Principal Engineers to set technical direction and raise the bar on engineering quality, while partnering with the wider Engineering SLT on initiatives to establish high-performance management practices across the function."
+      ],
+      "highlights": [
+        "Managing and developing <strong>18 engineers</strong> across three disciplines, building the individual growth pathways, feedback loops, and team health practices that let people do their best work inside a regulated environment.",
+        "Partnering with <strong>Lead and Principal Engineers</strong> to shape technical standards, reduce delivery risk, and ensure architecture decisions hold up as the product scales.",
+        "Leading <strong>hiring across multiple disciplines</strong> and building the talent pipeline needed to deliver scalable, customer-focused banking products at pace.",
+        "Contributing to <strong>Engineering SLT initiatives</strong> on high-performance management, helping establish consistent standards for how engineering teams are led across the organisation."
+      ]
+    },
+    {
+      "company": "ClearScore",
+      "companyUrl": "https://www.clearscore.com",
+      "dates": "April 2024 – September 2025",
+      "role": "Senior Engineering Manager · London",
+      "body": [
+        "ClearScore gives millions of people free access to their credit score and a marketplace to find cards, loans, and mortgages that fit. I led the Growth Delta squad, a cross-functional team focused on user engagement and revenue experimentation across the UK Cards and Loans products."
+      ],
+      "highlights": [
+        "Launched the <strong>Credit Scanner initiative</strong>, delivering a 4× lift in click-through from CRM campaigns and establishing a repeatable activation framework the team has used ever since.",
+        "Spotted data integrity issues in the <strong>Open Banking stack</strong> affecting nearly a third of marketplace records. Took ownership, drove the fix, and got it down to ~4%. The impact on downstream product performance was pretty meaningful.",
+        "Started a <strong>cross-squad collaboration group</strong> across the 6-squad UK GTM mission, mostly because I kept noticing teams solving the same problems in isolation. It became a genuine knowledge-sharing forum with real traction.",
+        "Led the technical transition to <strong>Kafka and Server Driven UI</strong> across the UK Marketplace, partnering with two squads and staying accountable for business metrics throughout the rollout."
+      ]
+    },
+    {
+      "company": "Timely",
+      "companySuffix": "/ Evercommerce",
+      "companyUrl": "https://www.gettimely.com",
+      "dates": "Sep 2018 – Apr 2024",
+      "role": "Team Lead & Manager → Senior iOS Engineer · Auckland",
+      "body": [
+        "Timely makes scheduling and point-of-sale software for the beauty industry. I joined as their sole iOS engineer, became the technical lead for mobile, then moved into management and eventually led mobile strategy across two organisations after the Evercommerce acquisition in 2021.",
+        "In the management chapter, I grew and ran the mobile team, took on interim management of the 8-engineer Payments group during an org transition, and defined architecture and development standards across Timely and SalonBiz."
+      ],
+      "highlights": [
+        "Delivered the <strong>first Tap to Pay on iPhone integration in Australasia</strong>, a technically complex initiative that needed close coordination with Apple, Stripe, and internal platform teams.",
+        "Drove a <strong>multi-team Stripe terminal integration</strong> and a custom inventory management system tailored to beauty salons, balancing UX, scalability, and reliability.",
+        "Mentored engineers from junior through to senior promotion and led <strong>hiring and onboarding</strong> of diverse talent, including interns who went on to full-time roles.",
+        "As the original sole iOS engineer, built the <strong>Consult app</strong> from scratch: a standalone form builder with a custom DSL to generate native UI, PDF export, and full backend sync."
+      ]
+    }
+  ],
+  "earlier": [
+    {
+      "company": "Circle",
+      "companyUrl": "https://circle.so",
+      "role": "Lead iOS Engineer · 2020–2021",
+      "description": "Built Circle's foundational iOS app from MVP, architecting key technical domains including a custom HTML renderer for rich native content. Acted as hiring manager for the iOS team and handed over a production codebase that supported Circle's growth to a $200M valuation."
+    },
+    {
+      "company": "PocketSmith",
+      "companyUrl": "https://www.pocketsmith.com",
+      "role": "Mobile Engineer · 2016–2018",
+      "description": "Sole developer for both iOS and Android at a personal finance platform. Implemented a shared MVVM architecture across Swift and Kotlin, then onboarded and upskilled the next mobile hire."
+    },
+    {
+      "company": "Floorsense",
+      "role": "Android Engineer · 2019–2020",
+      "description": "Built an Android companion app for a BLE-enabled smart hot-desking system, deployed across Xero campuses. Integrated real-time hardware communication via a custom sockets layer."
+    },
+    {
+      "company": "Mixbit",
+      "role": "Mobile Engineer · 2014–2016",
+      "description": "Early career at a video-tech startup founded by Chad Hurley (YouTube co-founder). Shipped the collaborative video editing Android app and led iOS development for a pivoted product built on WebRTC. The video capture tech became core to the eventual Bluejeans acquisition."
+    }
+  ]
+}

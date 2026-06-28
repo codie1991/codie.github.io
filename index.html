@@ -11,675 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    /* ── Reset & base ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --green:       #16a34a;
-      --green-light: #dcfce7;
-      --green-dark:  #14532d;
-      --ink:         #111827;
-      --ink-muted:   #6b7280;
-      --ink-faint:   #9ca3af;
-      --bg:          #f8f7f4;
-      --bg-card:     #ffffff;
-      --border:      #e5e7eb;
-      --max:         720px;
-      --serif:       'DM Serif Display', Georgia, serif;
-      --sans:        'Inter', system-ui, sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--sans);
-      font-size: 17px;
-      line-height: 1.7;
-      color: var(--ink);
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── Nav ── */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(248, 247, 244, 0.92);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    nav .nav-inner {
-      max-width: calc(var(--max) + 80px);
-      margin: 0 auto;
-      padding: 0 40px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    nav .nav-name {
-      font-family: var(--serif);
-      font-size: 18px;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    nav .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
-    nav .nav-links a {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--ink-muted);
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: color 0.2s;
-    }
-
-    nav .nav-links a:hover { color: var(--green); }
-
-    /* ── Layout ── */
-    main {
-      max-width: calc(var(--max) + 80px);
-      margin: 0 auto;
-      padding: 0 40px;
-    }
-
-    section {
-      padding: 100px 0;
-    }
-
-    section + section {
-      border-top: 1px solid var(--border);
-    }
-
-    /* ── Hero ── */
-    #hero {
-      padding-top: 160px;
-      padding-bottom: 100px;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 28px;
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--green);
-      border-radius: 2px;
-    }
-
-    #hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(42px, 6vw, 64px);
-      line-height: 1.1;
-      color: var(--ink);
-      margin-bottom: 32px;
-      max-width: 640px;
-    }
-
-    #hero .hero-body {
-      max-width: 560px;
-    }
-
-    #hero .hero-body p {
-      font-size: 18px;
-      line-height: 1.75;
-      color: var(--ink);
-      margin-bottom: 16px;
-    }
-
-    #hero .hero-body p:last-child { margin-bottom: 0; }
-
-    .hero-actions {
-      margin-top: 40px;
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 24px;
-      background: var(--green);
-      color: #fff;
-      font-family: var(--sans);
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 6px;
-      letter-spacing: 0.01em;
-      transition: background 0.2s, transform 0.1s;
-    }
-
-    .btn:hover { background: var(--green-dark); transform: translateY(-1px); }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--ink);
-      border: 1.5px solid var(--border);
-    }
-
-    .btn-ghost:hover { background: transparent; border-color: var(--ink-muted); transform: translateY(-1px); }
-
-    /* ── Section headers ── */
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 48px;
-    }
-
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 2px;
-      background: var(--green);
-      border-radius: 2px;
-    }
-
-    h2.section-title {
-      font-family: var(--serif);
-      font-size: clamp(32px, 4vw, 44px);
-      line-height: 1.15;
-      margin-bottom: 24px;
-      color: var(--ink);
-    }
-
-    /* ── Hero photo + quote ── */
-    #hero h1 {
-      margin-bottom: 36px;
-    }
-
-    .hero-quote-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 48px;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-
-    .hero-quote {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: clamp(20px, 2.2vw, 26px);
-      line-height: 1.55;
-      color: var(--ink);
-      border-left: 3px solid var(--green);
-      padding-left: 24px;
-      margin: 0;
-    }
-
-    .hero-photo {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      object-position: center 15%;
-      border-radius: 16px;
-      display: block;
-      flex-shrink: 0;
-      border: 1px solid var(--border);
-    }
-
-    @media (max-width: 700px) {
-      .hero-quote-row {
-        grid-template-columns: 1fr;
-      }
-      .hero-photo {
-        width: 100%;
-        height: 220px;
-      }
-    }
-
-    /* ── Philosophy ── */
-    #philosophy .philosophy-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 48px;
-    }
-
-    .philosophy-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px;
-    }
-
-    .philosophy-card h3 {
-      font-family: var(--serif);
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: var(--ink);
-    }
-
-    .philosophy-card p {
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--ink-muted);
-    }
-
-    /* ── Work ── */
-    .work-entry {
-      margin-bottom: 72px;
-    }
-
-    .work-entry:last-child { margin-bottom: 0; }
-
-    .work-meta {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-
-    .work-company {
-      font-family: var(--serif);
-      font-size: 26px;
-      color: var(--ink);
-    }
-
-    .work-company a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 2px solid var(--green);
-      padding-bottom: 1px;
-      transition: color 0.2s;
-    }
-
-    .work-company a:hover { color: var(--green); }
-
-    .work-dates {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--ink-faint);
-      letter-spacing: 0.02em;
-    }
-
-    .work-role {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--green);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .work-body p {
-      font-size: 16px;
-      line-height: 1.75;
-      color: var(--ink);
-      margin-bottom: 14px;
-    }
-
-    .work-body p:last-child { margin-bottom: 0; }
-
-    .work-highlights {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .highlight {
-      display: flex;
-      gap: 12px;
-      font-size: 15px;
-      line-height: 1.65;
-      color: var(--ink);
-    }
-
-    .highlight::before {
-      content: '→';
-      color: var(--green);
-      font-weight: 600;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .highlight strong {
-      font-weight: 600;
-    }
-
-    /* Earlier career */
-    .earlier {
-      margin-top: 64px;
-      padding-top: 48px;
-      border-top: 1px solid var(--border);
-    }
-
-    .earlier h3 {
-      font-family: var(--serif);
-      font-size: 22px;
-      margin-bottom: 32px;
-      color: var(--ink);
-    }
-
-    .earlier-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .earlier-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 24px;
-    }
-
-    .earlier-card .ec-company {
-      font-family: var(--serif);
-      font-size: 18px;
-      color: var(--ink);
-      margin-bottom: 4px;
-    }
-
-    .earlier-card .ec-company a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .earlier-card .ec-company a:hover { color: var(--green); }
-
-    .earlier-card .ec-role {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-      margin-bottom: 12px;
-    }
-
-    .earlier-card p {
-      font-size: 14px;
-      line-height: 1.65;
-      color: var(--ink-muted);
-    }
-
-    /* ── Projects ── */
-    .project-entry {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      align-items: start;
-      margin-bottom: 48px;
-    }
-
-    .project-entry:last-child { margin-bottom: 0; }
-
-    .project-content h3 {
-      font-family: var(--serif);
-      font-size: 26px;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-
-    .project-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--green);
-      background: var(--green-light);
-      border-radius: 4px;
-      padding: 3px 8px;
-      margin-bottom: 14px;
-    }
-
-    .project-content p {
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--ink-muted);
-      margin-bottom: 12px;
-    }
-
-    .project-content p:last-child { margin-bottom: 0; }
-
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--green);
-      text-decoration: none;
-      margin-top: 8px;
-      transition: gap 0.2s;
-    }
-
-    .project-link:hover { gap: 10px; }
-
-    .project-aside {
-      background: var(--green-light);
-      border-radius: 12px;
-      padding: 28px;
-      font-size: 14px;
-      line-height: 1.65;
-      color: var(--green-dark);
-    }
-
-    .project-aside strong {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      color: var(--green);
-    }
-
-    /* ── App grid ── */
-    .apps-label {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-      margin: 64px 0 24px;
-    }
-
-    .app-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .app-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .app-card:hover {
-      border-color: var(--green);
-      box-shadow: 0 4px 16px rgba(22, 163, 74, 0.08);
-    }
-
-    .app-card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .app-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 12px;
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 1px solid var(--border);
-    }
-
-    .app-meta {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .app-name {
-      font-family: var(--serif);
-      font-size: 16px;
-      color: var(--ink);
-      line-height: 1.2;
-      margin-bottom: 3px;
-    }
-
-    .app-company {
-      font-size: 12px;
-      color: var(--ink-faint);
-      font-weight: 500;
-    }
-
-    .app-store-links {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .store-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      color: var(--ink-muted);
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      padding: 4px 8px;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .store-badge:hover {
-      border-color: var(--green);
-      color: var(--green);
-    }
-
-    .store-badge svg {
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 700px) {
-      .app-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 420px) {
-      .app-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── Contact ── */
-    #contact {
-      padding-bottom: 140px;
-    }
-
-    .contact-block {
-      max-width: 520px;
-    }
-
-    .contact-block p {
-      font-size: 17px;
-      line-height: 1.75;
-      color: var(--ink-muted);
-      margin-bottom: 16px;
-    }
-
-    .contact-links {
-      margin-top: 40px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    /* ── Footer ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 40px;
-      max-width: calc(var(--max) + 80px);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 13px;
-      color: var(--ink-faint);
-    }
-
-    footer a {
-      color: var(--ink-faint);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    footer a:hover { color: var(--green); }
-
-    /* ── Divider between major work entries ── */
-    .work-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 64px 0;
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 700px) {
-      main { padding: 0 24px; }
-
-      nav .nav-inner { padding: 0 24px; }
-
-      #hero { padding-top: 120px; }
-
-      #philosophy .philosophy-grid { grid-template-columns: 1fr; }
-
-      .earlier-grid { grid-template-columns: 1fr; }
-
-      .project-entry { grid-template-columns: 1fr; }
-
-      .project-aside { display: none; }
-
-      footer { flex-direction: column; gap: 8px; text-align: center; padding: 32px 24px; }
-
-      nav .nav-links { gap: 20px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -699,7 +31,7 @@
 
     <!-- ── Hero ── -->
     <section id="hero">
-      <div class="hero-eyebrow">Senior Engineering Manager · Fintech & Mobile</div>
+      <div class="hero-eyebrow">Senior Engineering Manager · Fintech &amp; Mobile</div>
       <h1>Building teams that ship things that matter.</h1>
       <div class="hero-quote-row">
         <blockquote class="hero-quote">
@@ -775,198 +107,10 @@
     <!-- ── Work ── -->
     <section id="work">
       <div class="section-label">Experience</div>
-
-      <!-- LHV Bank -->
-      <div class="work-entry">
-        <div class="work-meta">
-          <div class="work-company">
-            <a href="https://www.lhv.co.uk" target="_blank" rel="noopener noreferrer">LHV Bank UK</a>
-          </div>
-          <div class="work-dates">October 2025 – Present</div>
-        </div>
-        <div class="work-role">Engineering Manager, Retail Banking · London</div>
-        <div class="work-body">
-          <p>
-            LHV Bank UK is a fast-growing digital bank building retail and business
-            banking products for the UK market. I lead engineering for the Retail
-            Banking division: 18 engineers across cross-functional squads
-            spanning native mobile, backend engineering, and software engineering
-            in test.
-          </p>
-          <p>
-            The role sits at the intersection of people leadership, technical
-            strategy, and organisational scale. I work closely with Lead and
-            Principal Engineers to set technical direction and raise the bar on
-            engineering quality, while partnering with the wider Engineering SLT
-            on initiatives to establish high-performance management practices
-            across the function.
-          </p>
-          <div class="work-highlights">
-            <div class="highlight">
-              <span>Managing and developing <strong>18 engineers</strong> across three disciplines,
-              building the individual growth pathways, feedback loops, and team health
-              practices that let people do their best work inside a regulated environment.</span>
-            </div>
-            <div class="highlight">
-              <span>Partnering with <strong>Lead and Principal Engineers</strong> to shape technical
-              standards, reduce delivery risk, and ensure architecture decisions
-              hold up as the product scales.</span>
-            </div>
-            <div class="highlight">
-              <span>Leading <strong>hiring across multiple disciplines</strong> and building the talent
-              pipeline needed to deliver scalable, customer-focused banking products
-              at pace.</span>
-            </div>
-            <div class="highlight">
-              <span>Contributing to <strong>Engineering SLT initiatives</strong> on high-performance
-              management, helping establish consistent standards for how engineering
-              teams are led across the organisation.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-divider"></div>
-
-      <!-- ClearScore -->
-      <div class="work-entry">
-        <div class="work-meta">
-          <div class="work-company">
-            <a href="https://www.clearscore.com" target="_blank" rel="noopener noreferrer">ClearScore</a>
-          </div>
-          <div class="work-dates">April 2024 – September 2025</div>
-        </div>
-        <div class="work-role">Senior Engineering Manager · London</div>
-        <div class="work-body">
-          <p>
-            ClearScore gives millions of people free access to their credit score and
-            a marketplace to find cards, loans, and mortgages that fit. I led the
-            Growth Delta squad, a cross-functional team focused on user engagement
-            and revenue experimentation across the UK Cards and Loans products.
-          </p>
-          <div class="work-highlights">
-            <div class="highlight">
-              <span>Launched the <strong>Credit Scanner initiative</strong>, delivering a 4× lift in
-              click-through from CRM campaigns and establishing a repeatable activation
-              framework the team has used ever since.</span>
-            </div>
-            <div class="highlight">
-              <span>Spotted data integrity issues in the <strong>Open Banking stack</strong> affecting
-              nearly a third of marketplace records. Took ownership, drove the fix,
-              and got it down to ~4%. The impact on downstream product performance
-              was pretty meaningful.</span>
-            </div>
-            <div class="highlight">
-              <span>Started a <strong>cross-squad collaboration group</strong> across the 6-squad UK
-              GTM mission, mostly because I kept noticing teams solving the same
-              problems in isolation. It became a genuine knowledge-sharing forum
-              with real traction.</span>
-            </div>
-            <div class="highlight">
-              <span>Led the technical transition to <strong>Kafka and Server Driven UI</strong>
-              across the UK Marketplace, partnering with two squads and staying accountable
-              for business metrics throughout the rollout.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="work-divider"></div>
-
-      <!-- Timely -->
-      <div class="work-entry">
-        <div class="work-meta">
-          <div class="work-company">
-            <a href="https://www.gettimely.com" target="_blank" rel="noopener noreferrer">Timely</a>
-            <span style="font-family: var(--sans); font-size: 16px; color: var(--ink-faint); font-weight: 400;"> / Evercommerce</span>
-          </div>
-          <div class="work-dates">Sep 2018 – Apr 2024</div>
-        </div>
-        <div class="work-role">Team Lead & Manager → Senior iOS Engineer · Auckland</div>
-        <div class="work-body">
-          <p>
-            Timely makes scheduling and point-of-sale software for the beauty industry.
-            I joined as their sole iOS engineer, became the technical lead for mobile,
-            then moved into management and eventually led mobile strategy across two
-            organisations after the Evercommerce acquisition in 2021.
-          </p>
-          <p>
-            In the management chapter, I grew and ran the mobile team, took on interim
-            management of the 8-engineer Payments group during an org transition, and
-            defined architecture and development standards across Timely and SalonBiz.
-          </p>
-          <div class="work-highlights">
-            <div class="highlight">
-              <span>Delivered the <strong>first Tap to Pay on iPhone integration in Australasia</strong>,
-              a technically complex initiative that needed close coordination with Apple,
-              Stripe, and internal platform teams.</span>
-            </div>
-            <div class="highlight">
-              <span>Drove a <strong>multi-team Stripe terminal integration</strong> and a custom inventory
-              management system tailored to beauty salons, balancing UX, scalability,
-              and reliability.</span>
-            </div>
-            <div class="highlight">
-              <span>Mentored engineers from junior through to senior promotion and
-              led <strong>hiring and onboarding</strong> of diverse talent, including interns
-              who went on to full-time roles.</span>
-            </div>
-            <div class="highlight">
-              <span>As the original sole iOS engineer, built the
-              <strong>Consult app</strong> from scratch: a standalone form builder with
-              a custom DSL to generate native UI, PDF export, and full backend sync.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Earlier career -->
+      <div id="work-main"></div>
       <div class="earlier">
         <h3>Earlier career</h3>
-        <div class="earlier-grid">
-          <div class="earlier-card">
-            <div class="ec-company">
-              <a href="https://circle.so" target="_blank" rel="noopener noreferrer">Circle</a>
-            </div>
-            <div class="ec-role">Lead iOS Engineer · 2020–2021</div>
-            <p>
-              Built Circle's foundational iOS app from MVP, architecting key technical
-              domains including a custom HTML renderer for rich native content. Acted as
-              hiring manager for the iOS team and handed over a production codebase that
-              supported Circle's growth to a $200M valuation.
-            </p>
-          </div>
-          <div class="earlier-card">
-            <div class="ec-company">
-              <a href="https://www.pocketsmith.com" target="_blank" rel="noopener noreferrer">PocketSmith</a>
-            </div>
-            <div class="ec-role">Mobile Engineer · 2016–2018</div>
-            <p>
-              Sole developer for both iOS and Android at a personal finance platform.
-              Implemented a shared MVVM architecture across Swift and Kotlin, then
-              onboarded and upskilled the next mobile hire.
-            </p>
-          </div>
-          <div class="earlier-card">
-            <div class="ec-company">Floorsense</div>
-            <div class="ec-role">Android Engineer · 2019–2020</div>
-            <p>
-              Built an Android companion app for a BLE-enabled smart hot-desking system,
-              deployed across Xero campuses. Integrated real-time hardware communication
-              via a custom sockets layer.
-            </p>
-          </div>
-          <div class="earlier-card">
-            <div class="ec-company">Mixbit</div>
-            <div class="ec-role">Mobile Engineer · 2014–2016</div>
-            <p>
-              Early career at a video-tech startup founded by Chad Hurley (YouTube
-              co-founder). Shipped the collaborative video editing Android app and led
-              iOS development for a pivoted product built on WebRTC. The video capture
-              tech became core to the eventual Bluejeans acquisition.
-            </p>
-          </div>
-        </div>
+        <div id="earlier-grid" class="earlier-grid"></div>
       </div>
     </section>
 
@@ -975,7 +119,6 @@
       <div class="section-label">Projects</div>
       <h2 class="section-title">Things I've built.</h2>
 
-      <!-- Tetsu Timer — personal project -->
       <div class="project-entry">
         <div class="project-content">
           <h3>V60 Tetsu Timer</h3>
@@ -1001,117 +144,8 @@
         </div>
       </div>
 
-      <!-- Apps shipped at work -->
       <div class="apps-label">Apps I've shipped</div>
-      <div class="app-grid">
-
-        <!-- Timely Bookings & Payments -->
-        <div class="app-card">
-          <div class="app-card-header">
-            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0e/7d/ae/0e7dae47-4d8b-6da7-110e-f1b73cd2d494/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/100x100bb.jpg" alt="Timely Bookings & Payments icon" />
-            <div class="app-meta">
-              <div class="app-name">Timely Bookings &amp; Payments</div>
-              <div class="app-company">Timely · iOS</div>
-            </div>
-          </div>
-          <div class="app-store-links">
-            <a href="https://apps.apple.com/gb/app/timely-bookings-payments/id993500668" class="store-badge" target="_blank" rel="noopener noreferrer">
-              <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor"><path d="M8.18 6.37c-.01-1.3.7-1.93 1.82-2.57-.68-1-1.73-1.56-3.06-1.63C5.7 2.1 4.5 2.88 3.94 2.88c-.58 0-1.61-.84-2.66-.81C-.04 2.1-.8 3.13-.8 4.77-.8 7.6 1.2 11.2 2.86 11.2c.74.01 1.24-.5 2.22-.5.97 0 1.43.5 2.26.49 1.68-.03 3.46-3.34 3.46-3.34a3.6 3.6 0 0 1-2.62-1.48zM6.7.75C7.36.03 7.59-.82 7.54-1.6c-.76.04-1.67.5-2.2 1.2C4.8.3 4.5 1.12 4.57 1.92 5.4 1.98 6.03 1.48 6.7.75z"/></svg>
-              App Store
-            </a>
-          </div>
-        </div>
-
-        <!-- Timely Consult -->
-        <div class="app-card">
-          <div class="app-card-header">
-            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bf/c9/ac/bfc9ac79-2c52-fc85-7fc0-7098d4cf41e1/AppIcon-0-0-1x_U007epad-0-1-0-P3-85-220.png/100x100bb.jpg" alt="Timely Consult icon" />
-            <div class="app-meta">
-              <div class="app-name">Timely Consult</div>
-              <div class="app-company">Timely · iOS</div>
-            </div>
-          </div>
-          <div class="app-store-links">
-            <a href="https://apps.apple.com/gb/app/timely-consult-custom-forms/id1437478917" class="store-badge" target="_blank" rel="noopener noreferrer">
-              <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor"><path d="M8.18 6.37c-.01-1.3.7-1.93 1.82-2.57-.68-1-1.73-1.56-3.06-1.63C5.7 2.1 4.5 2.88 3.94 2.88c-.58 0-1.61-.84-2.66-.81C-.04 2.1-.8 3.13-.8 4.77-.8 7.6 1.2 11.2 2.86 11.2c.74.01 1.24-.5 2.22-.5.97 0 1.43.5 2.26.49 1.68-.03 3.46-3.34 3.46-3.34a3.6 3.6 0 0 1-2.62-1.48zM6.7.75C7.36.03 7.59-.82 7.54-1.6c-.76.04-1.67.5-2.2 1.2C4.8.3 4.5 1.12 4.57 1.92 5.4 1.98 6.03 1.48 6.7.75z"/></svg>
-              App Store
-            </a>
-          </div>
-        </div>
-
-        <!-- Timely Stock -->
-        <div class="app-card">
-          <div class="app-card-header">
-            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1e/bf/2c/1ebf2cc0-1777-8dd0-7c58-cbc8f27e713d/AppIcon-0-0-1x_U007emarketing-0-8-0-P3-85-220.png/100x100bb.jpg" alt="Timely Stock icon" />
-            <div class="app-meta">
-              <div class="app-name">Timely Stock</div>
-              <div class="app-company">Timely · iOS</div>
-            </div>
-          </div>
-          <div class="app-store-links">
-            <a href="https://apps.apple.com/gb/app/timely-stock/id1599173673" class="store-badge" target="_blank" rel="noopener noreferrer">
-              <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor"><path d="M8.18 6.37c-.01-1.3.7-1.93 1.82-2.57-.68-1-1.73-1.56-3.06-1.63C5.7 2.1 4.5 2.88 3.94 2.88c-.58 0-1.61-.84-2.66-.81C-.04 2.1-.8 3.13-.8 4.77-.8 7.6 1.2 11.2 2.86 11.2c.74.01 1.24-.5 2.22-.5.97 0 1.43.5 2.26.49 1.68-.03 3.46-3.34 3.46-3.34a3.6 3.6 0 0 1-2.62-1.48zM6.7.75C7.36.03 7.59-.82 7.54-1.6c-.76.04-1.67.5-2.2 1.2C4.8.3 4.5 1.12 4.57 1.92 5.4 1.98 6.03 1.48 6.7.75z"/></svg>
-              App Store
-            </a>
-          </div>
-        </div>
-
-        <!-- Circle Communities -->
-        <div class="app-card">
-          <div class="app-card-header">
-            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/85/8b/42/858b4267-cfe5-4c0b-7308-6e88ac6ceff9/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="Circle Communities icon" />
-            <div class="app-meta">
-              <div class="app-name">Circle Communities</div>
-              <div class="app-company">Circle · iOS</div>
-            </div>
-          </div>
-          <div class="app-store-links">
-            <a href="https://apps.apple.com/gb/app/circle-communities/id1509651625" class="store-badge" target="_blank" rel="noopener noreferrer">
-              <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor"><path d="M8.18 6.37c-.01-1.3.7-1.93 1.82-2.57-.68-1-1.73-1.56-3.06-1.63C5.7 2.1 4.5 2.88 3.94 2.88c-.58 0-1.61-.84-2.66-.81C-.04 2.1-.8 3.13-.8 4.77-.8 7.6 1.2 11.2 2.86 11.2c.74.01 1.24-.5 2.22-.5.97 0 1.43.5 2.26.49 1.68-.03 3.46-3.34 3.46-3.34a3.6 3.6 0 0 1-2.62-1.48zM6.7.75C7.36.03 7.59-.82 7.54-1.6c-.76.04-1.67.5-2.2 1.2C4.8.3 4.5 1.12 4.57 1.92 5.4 1.98 6.03 1.48 6.7.75z"/></svg>
-              App Store
-            </a>
-          </div>
-        </div>
-
-        <!-- PocketSmith -->
-        <div class="app-card">
-          <div class="app-card-header">
-            <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/04/4a/f3/044af316-3899-1e28-3504-148fec39d820/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/100x100bb.jpg" alt="PocketSmith Sidekick icon" />
-            <div class="app-meta">
-              <div class="app-name">PocketSmith Sidekick</div>
-              <div class="app-company">PocketSmith · iOS &amp; Android</div>
-            </div>
-          </div>
-          <div class="app-store-links">
-            <a href="https://apps.apple.com/gb/app/pocketsmith-sidekick/id1159515083" class="store-badge" target="_blank" rel="noopener noreferrer">
-              <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor"><path d="M8.18 6.37c-.01-1.3.7-1.93 1.82-2.57-.68-1-1.73-1.56-3.06-1.63C5.7 2.1 4.5 2.88 3.94 2.88c-.58 0-1.61-.84-2.66-.81C-.04 2.1-.8 3.13-.8 4.77-.8 7.6 1.2 11.2 2.86 11.2c.74.01 1.24-.5 2.22-.5.97 0 1.43.5 2.26.49 1.68-.03 3.46-3.34 3.46-3.34a3.6 3.6 0 0 1-2.62-1.48zM6.7.75C7.36.03 7.59-.82 7.54-1.6c-.76.04-1.67.5-2.2 1.2C4.8.3 4.5 1.12 4.57 1.92 5.4 1.98 6.03 1.48 6.7.75z"/></svg>
-              App Store
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.pocketsmith.app" class="store-badge" target="_blank" rel="noopener noreferrer">
-              <svg width="11" height="12" viewBox="0 0 11 12" fill="currentColor"><path d="M.5.6C.2.77 0 1.1 0 1.53v8.94c0 .43.2.76.5.93l.05.04 5.01-5.01v-.12L.55.56.5.6zm6.68 6.63L5.56 5.6v-.12l1.62-1.62.04.02 1.92 1.09c.55.31.55.82 0 1.13L7.22 7.2l-.04.03zM.5 11.4l5.05-5.05 1.63 1.63L1.55 11.6C1.23 11.77.84 11.73.5 11.4zM.5.6C.84.27 1.23.23 1.55.4l5.63 3.2L5.55 5.22.5.64V.6z"/></svg>
-              Play Store
-            </a>
-          </div>
-        </div>
-
-        <!-- Floorsense -->
-        <div class="app-card">
-          <div class="app-card-header">
-            <img class="app-icon" src="https://play-lh.googleusercontent.com/WKaeOhVTxspwhiWbvhQNT200Az6lcJnfhTLH_Da_WskhsmB3KPQSpY7YqwPIsfGpThslE_fYiOBu-IeJjTwtRtM=w100-h100" alt="Floorsense icon" />
-            <div class="app-meta">
-              <div class="app-name">Floorsense</div>
-              <div class="app-company">Floorsense · Android</div>
-            </div>
-          </div>
-          <div class="app-store-links">
-            <a href="https://play.google.com/store/apps/details?id=com.floorsense.app&hl=en_GB" class="store-badge" target="_blank" rel="noopener noreferrer">
-              <svg width="11" height="12" viewBox="0 0 11 12" fill="currentColor"><path d="M.5.6C.2.77 0 1.1 0 1.53v8.94c0 .43.2.76.5.93l.05.04 5.01-5.01v-.12L.55.56.5.6zm6.68 6.63L5.56 5.6v-.12l1.62-1.62.04.02 1.92 1.09c.55.31.55.82 0 1.13L7.22 7.2l-.04.03zM.5 11.4l5.05-5.05 1.63 1.63L1.55 11.6C1.23 11.77.84 11.73.5 11.4zM.5.6C.84.27 1.23.23 1.55.4l5.63 3.2L5.55 5.22.5.64V.6z"/></svg>
-              Play Store
-            </a>
-          </div>
-        </div>
-
-      </div>
+      <div id="app-grid" class="app-grid"></div>
     </section>
 
     <!-- ── Contact ── -->
@@ -1142,6 +176,91 @@
     <span>© 2026 Codie Westphall</span>
     <span>London, UK</span>
   </footer>
+
+  <script>
+    const APPLE_SVG = `<svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor"><path d="M8.18 6.37c-.01-1.3.7-1.93 1.82-2.57-.68-1-1.73-1.56-3.06-1.63C5.7 2.1 4.5 2.88 3.94 2.88c-.58 0-1.61-.84-2.66-.81C-.04 2.1-.8 3.13-.8 4.77-.8 7.6 1.2 11.2 2.86 11.2c.74.01 1.24-.5 2.22-.5.97 0 1.43.5 2.26.49 1.68-.03 3.46-3.34 3.46-3.34a3.6 3.6 0 0 1-2.62-1.48zM6.7.75C7.36.03 7.59-.82 7.54-1.6c-.76.04-1.67.5-2.2 1.2C4.8.3 4.5 1.12 4.57 1.92 5.4 1.98 6.03 1.48 6.7.75z"/></svg>`;
+    const GOOGLE_SVG = `<svg width="11" height="12" viewBox="0 0 11 12" fill="currentColor"><path d="M.5.6C.2.77 0 1.1 0 1.53v8.94c0 .43.2.76.5.93l.05.04 5.01-5.01v-.12L.55.56.5.6zm6.68 6.63L5.56 5.6v-.12l1.62-1.62.04.02 1.92 1.09c.55.31.55.82 0 1.13L7.22 7.2l-.04.03zM.5 11.4l5.05-5.05 1.63 1.63L1.55 11.6C1.23 11.77.84 11.73.5 11.4zM.5.6C.84.27 1.23.23 1.55.4l5.63 3.2L5.55 5.22.5.64V.6z"/></svg>`;
+
+    const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    function renderStoreBadge({ type, url }) {
+      const icon = type === 'apple' ? APPLE_SVG : GOOGLE_SVG;
+      const label = type === 'apple' ? 'App Store' : 'Play Store';
+      return `<a href="${esc(url)}" class="store-badge" target="_blank" rel="noopener noreferrer">${icon} ${label}</a>`;
+    }
+
+    function renderAppCard(app) {
+      return `
+        <div class="app-card">
+          <div class="app-card-header">
+            <img class="app-icon" src="${esc(app.icon)}" alt="${esc(app.name)} icon" />
+            <div class="app-meta">
+              <div class="app-name">${esc(app.name)}</div>
+              <div class="app-company">${esc(app.company)} · ${esc(app.platform)}</div>
+            </div>
+          </div>
+          <div class="app-store-links">
+            ${app.stores.map(renderStoreBadge).join('')}
+          </div>
+        </div>`;
+    }
+
+    function renderWorkEntry(entry, showDivider) {
+      const companyInner = entry.companyUrl
+        ? `<a href="${esc(entry.companyUrl)}" target="_blank" rel="noopener noreferrer">${esc(entry.company)}</a>`
+        : esc(entry.company);
+
+      const suffix = entry.companySuffix
+        ? ` <span style="font-family:var(--sans);font-size:16px;color:var(--ink-faint);font-weight:400">${esc(entry.companySuffix)}</span>`
+        : '';
+
+      const bodyHtml = entry.body.map(p => `<p>${esc(p)}</p>`).join('');
+
+      const highlightsHtml = entry.highlights.map(h => `
+        <div class="highlight"><span>${h}</span></div>`).join('');
+
+      return `
+        ${showDivider ? '<div class="work-divider"></div>' : ''}
+        <div class="work-entry">
+          <div class="work-meta">
+            <div class="work-company">${companyInner}${suffix}</div>
+            <div class="work-dates">${esc(entry.dates)}</div>
+          </div>
+          <div class="work-role">${esc(entry.role)}</div>
+          <div class="work-body">
+            ${bodyHtml}
+            <div class="work-highlights">${highlightsHtml}</div>
+          </div>
+        </div>`;
+    }
+
+    function renderEarlierCard(entry) {
+      const companyInner = entry.companyUrl
+        ? `<a href="${esc(entry.companyUrl)}" target="_blank" rel="noopener noreferrer">${esc(entry.company)}</a>`
+        : esc(entry.company);
+
+      return `
+        <div class="earlier-card">
+          <div class="ec-company">${companyInner}</div>
+          <div class="ec-role">${esc(entry.role)}</div>
+          <p>${esc(entry.description)}</p>
+        </div>`;
+    }
+
+    Promise.all([
+      fetch('_data/apps.json').then(r => r.json()),
+      fetch('_data/work.json').then(r => r.json()),
+    ]).then(([apps, work]) => {
+      document.getElementById('app-grid').innerHTML =
+        apps.map(renderAppCard).join('');
+
+      document.getElementById('work-main').innerHTML =
+        work.main.map((entry, i) => renderWorkEntry(entry, i > 0)).join('');
+
+      document.getElementById('earlier-grid').innerHTML =
+        work.earlier.map(renderEarlierCard).join('');
+    });
+  </script>
 
 </body>
 </html>
