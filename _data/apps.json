@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Timely Bookings & Payments",
+    "company": "Timely",
+    "platform": "iOS",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0e/7d/ae/0e7dae47-4d8b-6da7-110e-f1b73cd2d494/AppIcon-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/100x100bb.jpg",
+    "stores": [
+      { "type": "apple", "url": "https://apps.apple.com/gb/app/timely-bookings-payments/id993500668" }
+    ]
+  },
+  {
+    "name": "Timely Consult",
+    "company": "Timely",
+    "platform": "iOS",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bf/c9/ac/bfc9ac79-2c52-fc85-7fc0-7098d4cf41e1/AppIcon-0-0-1x_U007epad-0-1-0-P3-85-220.png/100x100bb.jpg",
+    "stores": [
+      { "type": "apple", "url": "https://apps.apple.com/gb/app/timely-consult-custom-forms/id1437478917" }
+    ]
+  },
+  {
+    "name": "Timely Stock",
+    "company": "Timely",
+    "platform": "iOS",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1e/bf/2c/1ebf2cc0-1777-8dd0-7c58-cbc8f27e713d/AppIcon-0-0-1x_U007emarketing-0-8-0-P3-85-220.png/100x100bb.jpg",
+    "stores": [
+      { "type": "apple", "url": "https://apps.apple.com/gb/app/timely-stock/id1599173673" }
+    ]
+  },
+  {
+    "name": "Circle Communities",
+    "company": "Circle",
+    "platform": "iOS",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/85/8b/42/858b4267-cfe5-4c0b-7308-6e88ac6ceff9/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg",
+    "stores": [
+      { "type": "apple", "url": "https://apps.apple.com/gb/app/circle-communities/id1509651625" }
+    ]
+  },
+  {
+    "name": "PocketSmith Sidekick",
+    "company": "PocketSmith",
+    "platform": "iOS & Android",
+    "icon": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/04/4a/f3/044af316-3899-1e28-3504-148fec39d820/AppIcon-0-0-1x_U007emarketing-0-5-0-85-220.png/100x100bb.jpg",
+    "stores": [
+      { "type": "apple", "url": "https://apps.apple.com/gb/app/pocketsmith-sidekick/id1159515083" },
+      { "type": "google", "url": "https://play.google.com/store/apps/details?id=com.pocketsmith.app" }
+    ]
+  },
+  {
+    "name": "Floorsense",
+    "company": "Floorsense",
+    "platform": "Android",
+    "icon": "https://play-lh.googleusercontent.com/WKaeOhVTxspwhiWbvhQNT200Az6lcJnfhTLH_Da_WskhsmB3KPQSpY7YqwPIsfGpThslE_fYiOBu-IeJjTwtRtM=w100-h100",
+    "stores": [
+      { "type": "google", "url": "https://play.google.com/store/apps/details?id=com.floorsense.app&hl=en_GB" }
+    ]
+  }
+]
