@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local dev server
+node_modules/
+.env
+.env.local
+
+# OS thumbnails / temp
+Thumbs.db
+ehthumbs.db
