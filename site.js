@@ -68,8 +68,8 @@ function renderEarlierCard(entry) {
 }
 
 Promise.all([
-  fetch('_data/apps.json').then(r => r.json()),
-  fetch('_data/work.json').then(r => r.json()),
+  fetch('apps.json').then(r => r.json()),
+  fetch('work.json').then(r => r.json()),
 ]).then(([apps, work]) => {
   document.getElementById('app-grid').innerHTML =
     apps.map(renderAppCard).join('');
